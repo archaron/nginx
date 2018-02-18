@@ -106,11 +106,6 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
-COPY nginx.main.conf /etc/nginx/nginx.conf
-COPY nginx.basic.conf /etc/nginx/conf.d/01-basic.conf
-COPY nginx.gzip.conf /etc/nginx/conf.d/02-gzip.conf
-COPY nginx.default-vh.conf /etc/nginx/conf.d/03-default.conf
-
 EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
